@@ -1,8 +1,8 @@
 # Set visible devices
-export CUDA_VISIBLE_DEVICES="0,1,2,3,4,5,6,7"
+export CUDA_VISIBLE_DEVICES="0,1,2,3"
 
 # Set MP_SIZE to the number of devices
-MP_SIZE=8
+MP_SIZE=4
 
 # Provide path to vocab file and model
 VOCAB_PATH="/mnt/data/Yanex-YaML-100b/vocab/voc_100b.sp"
