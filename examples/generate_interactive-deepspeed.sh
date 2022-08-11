@@ -44,7 +44,7 @@ COMMON_ARGS="\
     --model-parallel-size $MP_SIZE \
     --make-vocab-size-divisible-by 1"
 
-deepspeed --hostfile /domino/mpi/hosts /mnt/imported/code/YaLM-100B/examples/generate_samples_gpt2.py \
+deepspeed --hostfile /domino/mpi/hosts /mnt/imported/code/YaLM-100B/megatron_lm/tools/generate_samples_gpt2.py \
     $LOAD_ARGS \
     $HPARAM_ARGS \
     $COMMON_ARGS \
