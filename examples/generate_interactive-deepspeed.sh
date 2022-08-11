@@ -44,7 +44,7 @@ COMMON_ARGS="\
     --model-parallel-size $MP_SIZE \
     --make-vocab-size-divisible-by 1"
 
-torchrun $DISTRIBUTED_ARGS megatron_lm/tools/generate_samples_gpt2.py \
+deepspeed --hostfiles /mnt/mpi/host $DISTRIBUTED_ARGS megatron_lm/tools/generate_samples_gpt2.py \
     $LOAD_ARGS \
     $HPARAM_ARGS \
     $COMMON_ARGS \
