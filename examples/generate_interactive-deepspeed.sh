@@ -1,8 +1,8 @@
 # Set visible devices
-export CUDA_VISIBLE_DEVICES="0,1,2,3"
+export CUDA_VISIBLE_DEVICES="0,1,2,3,4,5,6,7"
 
 # Set MP_SIZE to the number of devices
-MP_SIZE=4
+MP_SIZE=8
 
 # Provide path to vocab file and model
 VOCAB_PATH="/mnt/data/Yanex-YaML-100b/vocab/voc_100b.sp"
@@ -31,11 +31,11 @@ HPARAM_ARGS="\
     --tokenizer-type SentencePiece \
     --fp16"
 
-DISTRIBUTED_ARGS="--nproc_per_node $MP_SIZE \
-                  --nnodes 1 \
-                  --node_rank 0 \
-                  --master_addr localhost \
-                  --master_port=1234"
+#DISTRIBUTED_ARGS="--nproc_per_node $MP_SIZE \
+#                  --nnodes 1 \
+#                  --node_rank 0 \
+#                  --master_addr localhost \
+#                  --master_port=1234"
 
 COMMON_ARGS="\
     --num-samples 0 \
@@ -44,7 +44,7 @@ COMMON_ARGS="\
     --model-parallel-size $MP_SIZE \
     --make-vocab-size-divisible-by 1"
 
-deepspeed --hostfile /domino/mpi/hosts $DISTRIBUTED_ARGS megatron_lm/tools/generate_samples_gpt2.py \
+deepspeed --hostfile /domino/mpi/hosts megatron_lm/tools/generate_samples_gpt2.py \
     $LOAD_ARGS \
     $HPARAM_ARGS \
     $COMMON_ARGS \
