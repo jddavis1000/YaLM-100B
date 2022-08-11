@@ -6,7 +6,7 @@ MP_SIZE=8
 
 # Provide path to vocab file and model
 VOCAB_PATH="/mnt/data/Yanex-YaML-100b/vocab/voc_100b.sp"
-MODEL_PATH="/mnt/data/Yanex-YaML-100b/weights"
+MODEL_PATH="/mnt/data/Yanex-YaML-100b/weights/"
 LOAD_ARGS="\
     --vocab-file ${VOCAB_PATH} \
     --load ${MODEL_PATH}"
