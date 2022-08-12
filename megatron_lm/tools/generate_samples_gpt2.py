@@ -84,6 +84,7 @@ def main():
 
     # Set up model and load checkpoint.
     model = get_model(model_provider)
+    torch.cuda.empty_cache() ## added for memory management
     args = get_args()
     if args.load is not None:
         _ = load_checkpoint(model, None, None)
