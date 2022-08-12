@@ -5,8 +5,8 @@ export CUDA_VISIBLE_DEVICES="0,1,2,3,4,5,6,7"
 MP_SIZE=8
 
 # Provide path to vocab file and model
-VOCAB_PATH="yalm100b_checkpoint/vocab/voc_100b.sp"
-MODEL_PATH="yalm100b_checkpoint/weights"
+VOCAB_PATH="/mnt/data/Yanex-YaML-100b/vocab/voc_100b.sp"
+MODEL_PATH="/mnt/data/Yanex-YaML-100b/weights/"
 LOAD_ARGS="\
     --vocab-file ${VOCAB_PATH} \
     --load ${MODEL_PATH}"
@@ -46,7 +46,7 @@ COMMON_ARGS="\
     --model-parallel-size $MP_SIZE \
     --make-vocab-size-divisible-by 1"
 
-torchrun $DISTRIBUTED_ARGS megatron_lm/tools/generate_samples_gpt2.py \
+torchrun $DISTRIBUTED_ARGS /mnt/imported/code/YaLM-100B/megatron_lm/tools/generate_samples_gpt2.py \
     $LOAD_ARGS \
     $HPARAM_ARGS \
     $COMMON_ARGS \
