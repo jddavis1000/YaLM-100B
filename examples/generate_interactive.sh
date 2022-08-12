@@ -35,7 +35,8 @@ DISTRIBUTED_ARGS="--nproc_per_node $MP_SIZE \
                   --nnodes 1 \
                   --node_rank 0 \
                   --master_addr localhost \
-                  --master_port=1234"
+                  --master_port=1234" \
+                  --deepspeed True
 
 COMMON_ARGS="\
     --num-samples 0 \
