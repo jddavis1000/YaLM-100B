@@ -1,0 +1,8 @@
+"offload_param": {
+    "device": "cpu",
+    "nvme_path": "/mnt/data/Yanex-YaML-100b",
+    "pin_memory": true,
+    "buffer_count": 5,
+    "buffer_size": 1e8,
+    "max_in_cpu": 1e9
+  }
