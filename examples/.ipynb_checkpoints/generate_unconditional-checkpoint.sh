@@ -31,7 +31,7 @@ HPARAM_ARGS="\
     --activation-type geglu \
     --num-attention-heads 128 \
     --max-position-embeddings 1024 \
-    --tokenizer-type GPT2BPETokenizer \
+    --tokenizer-type SentencePiece \
     --fp16"
 
 DISTRIBUTED_ARGS="--nproc_per_node $MP_SIZE \
