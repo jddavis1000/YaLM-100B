@@ -28,7 +28,7 @@ HPARAM_ARGS="\
     --activation-type geglu \
     --num-attention-heads 128 \
     --max-position-embeddings 1024 \
-    --tokenizer-type GPT2BPETokenize \
+    --tokenizer-type SentencePiece \
     --fp16"
 
 DISTRIBUTED_ARGS="--nproc_per_node $MP_SIZE \
@@ -36,7 +36,6 @@ DISTRIBUTED_ARGS="--nproc_per_node $MP_SIZE \
                   --node_rank 0 \
                   --master_addr localhost \
                   --master_port=1234" \
-                  --deepspeed True
 
 COMMON_ARGS="\
     --num-samples 0 \

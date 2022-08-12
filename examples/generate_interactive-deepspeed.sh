@@ -18,6 +18,7 @@ GEN_ARGS="
     --seed 1234 \
     --seq-length 256 \
     --out-seq-length 128"
+    --deepspeed True
 
 HPARAM_ARGS="\
     --pos-encoding-type rotary \
