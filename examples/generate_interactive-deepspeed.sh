@@ -48,4 +48,5 @@ deepspeed --hostfile /domino/mpi/hosts /mnt/imported/code/YaLM-100B/megatron_lm/
     $LOAD_ARGS \
     $HPARAM_ARGS \
     $COMMON_ARGS \
-    $GEN_ARGS
+    $GEN_ARGS \
+    --deepspeed ds_memory_config.json
